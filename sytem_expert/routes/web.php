@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\RulebaseController;
+use App\Http\Controllers\KonsultasiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::resource('gejala', GejalaController::class);
+Route::resource('penyakit', PenyakitController::class);
+Route::resource('rulebase', RulebaseController::class);
+Route::resource('konsultasi', KonsultasiController::class);
